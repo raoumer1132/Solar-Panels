@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar Calculator Pakistan | Solar Citizen</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="cal.css">
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo-wrapper">
+                <a href="index.html" class="logo">
+                    <span class="logo-icon"><i class="fa-solid fa-sun"></i></span>
+                    <span class="solar">SOLAR</span> <span class="citizen">CITIZEN</span>
+                </a>
+            </div>
+            <nav class="nav-links" id="navLinks">
+                <a href="the-future.html">THE FUTURE</a>
+                <a href="solutions.html">SOLUTIONS</a>
+                <a href="sol-ai.html">SOL AI</a>
+                <a href="projects.html">PROJECTS</a>
+                <a href="about.html">ABOUT</a>
+                <a href="contact.html">CONTACT US</a>
+            </nav>
+            <div class="nav-right">
+                <a href="cal.html" class="calc-btn active-calc"><i class="fa-solid fa-calculator"></i></a>
+                <div class="menu-toggle" id="mobileMenuBtn">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Calculator Hero & Form Section -->
+    <section class="calc-hero-section">
+        <div class="container text-center">
+            <span class="calc-top-tag">SOLAR CITIZEN · CALCULATOR</span>
+            <h1>Solar System Calculator</h1>
+            <p class="calc-subtitle">Find the right system size for your home or office. Pricing on WhatsApp.</p>
+
+            <!-- Calculator Box Container -->
+            <div class="calc-box">
+                <!-- Tabs -->
+                <div class="calc-tabs">
+                    <button class="calc-tab active" id="tabBill" type="button">By bill</button>
+                    <button class="calc-tab" id="tabAppliances" type="button">By appliances</button>
+                </div>
+
+                <!-- Form Fields -->
+                <div class="calc-form">
+                    <div class="form-group" id="billGroup">
+                        <label for="monthlyBill">MONTHLY ELECTRICITY BILL (PKR)</label>
+                        <input type="text" id="monthlyBill" placeholder="e.g. 30,000">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="userCity">YOUR CITY</label>
+                        <select id="userCity">
+                            <option value="" disabled selected>Select your city</option>
+                            <option value="Karachi">Karachi</option>
+                            <option value="Lahore">Lahore</option>
+                            <option value="Islamabad">Islamabad</option>
+                            <option value="Rawalpindi">Rawalpindi</option>
+                            <option value="Faisalabad">Faisalabad</option>
+                            <option value="Multan">Multan</option>
+                            <option value="Peshawar">Peshawar</option>
+                            <option value="Quetta">Quetta</option>
+                            <option value="Other">Other City</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>SYSTEM TYPE</label>
+                        <div class="system-type-grid">
+                            <div class="system-card active" data-type="On-Grid">
+                                <h3>On-Grid</h3>
+                                <p>Net metering, no battery</p>
+                            </div>
+                            <div class="system-card" data-type="Hybrid">
+                                <h3>Hybrid</h3>
+                                <p>Battery backup included</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="btn-orange full-width-btn" id="calculateBtn" type="button">CALCULATE MY SOLAR SAVINGS</button>
+                </div>
+            </div>
+
+            <!-- RESULT SECTION (Initially hidden, appears after click) -->
+            <div class="result-section-box" id="resultBox" style="display: none; margin-top: 50px;">
+                <h3 style="color: #ea580c; margin-bottom: 25px; letter-spacing: 1px; font-size: 1.1rem;">YOUR SOLAR RECOMMENDATION</h3>
+                
+                <div class="system-type-grid" style="grid-template-columns: repeat(2, 1fr); gap: 20px; margin-bottom: 25px;">
+                    <div class="system-card" style="background: #121824; padding: 30px; text-align: center;">
+                        <h2 id="resKw" style="font-size: 2.2rem; color: #ffffff; margin-bottom: 5px;">3 kW</h2>
+                        <p style="color: #94a3b8; font-size: 0.8rem;">SYSTEM SIZE</p>
+                    </div>
+                    <div class="system-card" style="background: #121824; padding: 30px; text-align: center;">
+                        <h2 id="resPanels" style="font-size: 2.2rem; color: #ffffff; margin-bottom: 5px;">6 panels</h2>
+                        <p style="color: #94a3b8; font-size: 0.8rem;">TIER-1 PANELS</p>
+                    </div>
+                    <div class="system-card" style="background: #121824; padding: 30px; text-align: center;">
+                        <h2 id="resUnits" style="font-size: 2.2rem; color: #ffffff; margin-bottom: 5px;">~372 units</h2>
+                        <p style="color: #94a3b8; font-size: 0.8rem;">MONTHLY GENERATION</p>
+                    </div>
+                    <div class="system-card" style="background: #121824; padding: 30px; text-align: center;">
+                        <h2 id="resSqft" style="font-size: 2.2rem; color: #ffffff; margin-bottom: 5px;">~195 sq ft</h2>
+                        <p style="color: #94a3b8; font-size: 0.8rem;">ROOF SPACE</p>
+                    </div>
+                </div>
+
+                <div style="background: #121824; padding: 15px 25px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; border: 1px solid rgba(255,255,255,0.08);">
+                    <span style="color: #94a3b8; font-size: 0.9rem;">CO2 Offset / Year</span>
+                    <span id="resCo2" style="color: #ffffff; font-weight: 700;">3.1 tonnes</span>
+                </div>
+
+                <!-- Exact WhatsApp Green Button as in Screenshot -->
+                <button id="whatsappQuoteBtn" style="width: 100%; background: #22c55e; color: #ffffff; border: none; padding: 18px; border-radius: 8px; font-weight: 700; font-size: 1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px; transition: background 0.2s;">
+                    <i class="fa-brands fa-whatsapp" style="font-size: 1.3rem;"></i> GET YOUR EXACT QUOTE ON WHATSAPP
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Info Section: Worked Example -->
+    <section class="info-section">
+        <div class="container">
+            <h2>How our solar calculator estimates your savings</h2>
+            <p class="info-text">Solar Citizen's calculator analyzes your monthly utility bills, regional peak sun hours, and current electricity slab rates in Pakistan to recommend the most optimal solar system layout.</p>
+            
+            <div class="worked-example-box">
+                <p><strong>Worked Example:</strong> If your monthly electricity consumption is around 400 units, a <span class="highlight-orange">5 kW solar system</span> easily offsets your grid dependence, lowering your net bill significantly through net metering policies.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Info Section: Solar Capacity Table -->
+    <section class="info-section">
+        <div class="container">
+            <h2>Recommended Solar Sizes by Bill Range</h2>
+            <div class="solar-table-wrapper">
+                <table class="solar-table">
+                    <thead>
+                        <tr>
+                            <th>MONTHLY BILL (PKR)</th>
+                            <th>SUGGESTED SYSTEM</th>
+                            <th>ESTIMATED UNITS</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>PKR 15,000 - 25,000</td>
+                            <td>3 kW System</td>
+                            <td>~370 Units</td>
+                        </tr>
+                        <tr>
+                            <td>PKR 25,000 - 45,000</td>
+                            <td>5 kW - 6 kW System</td>
+                            <td>~650 Units</td>
+                        </tr>
+                        <tr>
+                            <td>PKR 45,000 - 80,000</td>
+                            <td>10 kW System</td>
+                            <td>~1,300 Units</td>
+                        </tr>
+                        <tr>
+                            <td>PKR 80,000+</td>
+                            <td>15 kW+ Commercial</td>
+                            <td>~2,000+ Units</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="table-note">*Estimates may vary slightly based on seasonal sun variations and appliance load patterns.</p>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="accordion">
+                <div class="accordion-item">
+                    <button class="accordion-header" type="button">
+                        <span>How accurate is this solar calculator?</span>
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                    <div class="accordion-body">
+                        <p>Our calculator uses precise average tariff rates and regional generation factors for Pakistan to give you a very close estimation of your required system size and generation capacity.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header" type="button">
+                        <span>What is the difference between On-Grid and Hybrid systems?</span>
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                    <div class="accordion-body">
+                        <p>On-grid systems sync directly with the utility grid and enable net metering without batteries. Hybrid systems include lithium battery storage to provide backup power during load shedding.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header" type="button">
+                        <span>Do you provide installation services across Pakistan?</span>
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                    <div class="accordion-body">
+                        <p>Yes, Solar Citizen provides complete turnkey solar engineering, procurement, and construction (EPC) services across major cities in Pakistan.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="#">Case Studies</a>
+                <a href="#">Contact Us</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms & Conditions</a>
+            </div>
+            <div class="social-icons">
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+            <p class="copyright">All Rights Reserved, Modular Energy (SMC-Pvt.) Ltd.</p>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Icon -->
+    <div class="whatsapp-float">
+        <a href="https://whatsapp.com" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
+
+    <!-- JavaScript Engine -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Mobile Menu Toggle
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const navLinks = document.getElementById('navLinks');
+            if(mobileMenuBtn) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    navLinks.classList.toggle('active-nav');
+                });
+            }
+
+            // Tabs Toggle
+            const tabBill = document.getElementById('tabBill');
+            const tabAppliances = document.getElementById('tabAppliances');
+            const billGroup = document.getElementById('billGroup');
+
+            tabBill.addEventListener('click', () => {
+                tabBill.classList.add('active');
+                tabAppliances.classList.remove('active');
+                billGroup.style.display = 'block';
+            });
+
+            tabAppliances.addEventListener('click', () => {
+                tabAppliances.classList.add('active');
+                tabBill.classList.remove('active');
+                billGroup.style.display = 'none';
+            });
+
+            // System Card Selection
+            const systemCards = document.querySelectorAll('.calc-form .system-card');
+            let selectedSystemType = 'On-Grid';
+
+            systemCards.forEach(card => {
+                card.addEventListener('click', () => {
+                    systemCards.forEach(c => c.classList.remove('active'));
+                    card.classList.add('active');
+                    selectedSystemType = card.getAttribute('data-type');
+                });
+            });
+
+            // Calculate Button & Dynamic UI Update
+            const calculateBtn = document.getElementById('calculateBtn');
+            const monthlyBillInput = document.getElementById('monthlyBill');
+            const userCitySelect = document.getElementById('userCity');
+            const resultBox = document.getElementById('resultBox');
+            
+            let finalKw = "3 kW";
+            let finalPanels = "6 panels";
+            let finalUnits = "~372 units";
+            let finalSqft = "~195 sq ft";
+            let finalCo2 = "3.1 tonnes";
+
+            calculateBtn.addEventListener('click', () => {
+                const cityValue = userCitySelect.value;
+                const isBillActive = tabBill.classList.contains('active');
+                let billValue = '';
+
+                if (!cityValue) {
+                    alert('Please select your city!');
+                    userCitySelect.focus();
+                    return;
+                }
+
+                if (isBillActive) {
+                    billValue = monthlyBillInput.value.trim();
+                    if (!billValue) {
+                        alert('Please enter your monthly electricity bill!');
+                        monthlyBillInput.focus();
+                        return;
+                    }
+                }
+
+                // Calculations based on bill slabs
+                let numBill = parseInt(billValue.replace(/,/g, '')) || 20000;
+                
+                if (numBill < 25000) {
+                    finalKw = "3 kW"; finalPanels = "6 panels"; finalUnits = "~372 units"; finalSqft = "~195 sq ft"; finalCo2 = "3.1 tonnes";
+                } else if (numBill < 45000) {
+                    finalKw = "5 kW"; finalPanels = "10 panels"; finalUnits = "~620 units"; finalSqft = "~325 sq ft"; finalCo2 = "5.2 tonnes";
+                } else if (numBill < 80000) {
+                    finalKw = "10 kW"; finalPanels = "20 panels"; finalUnits = "~1,240 units"; finalSqft = "~650 sq ft"; finalCo2 = "10.4 tonnes";
+                } else {
+                    finalKw = "15 kW"; finalPanels = "30 panels"; finalUnits = "~1,860 units"; finalSqft = "~975 sq ft"; finalCo2 = "15.6 tonnes";
+                }
+
+                // Update UI text
+                document.getElementById('resKw').innerText = finalKw;
+                document.getElementById('resPanels').innerText = finalPanels;
+                document.getElementById('resUnits').innerText = finalUnits;
+                document.getElementById('resSqft').innerText = finalSqft;
+                document.getElementById('resCo2').innerText = finalCo2;
+
+                // Show result section smoothly
+                resultBox.style.display = 'block';
+                resultBox.scrollIntoView({ behavior: 'smooth' });
+            });
+
+            // WhatsApp Quote Button Redirect
+            const whatsappQuoteBtn = document.getElementById('whatsappQuoteBtn');
+            whatsappQuoteBtn.addEventListener('click', () => {
+                const cityValue = userCitySelect.value || 'Not Selected';
+                const whatsappNumber = "923176527111"; // Yahan apna WhatsApp number likhein
+                let message = `*Solar Calculator Inquiry*%0A` +
+                              `----------------------------------%0A` +
+                              `*City:* ${cityValue}%0A` +
+                              `*System Type:* ${selectedSystemType}%0A` +
+                              `*Recommended Size:* ${finalKw} (${finalPanels})%0A` +
+                              `*Estimated Generation:* ${finalUnits}%0A` +
+                              `----------------------------------%0A` +
+                              `Please share the exact price quote.`;
+
+                window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
+            });
+
+            // FAQ Accordion Toggle
+            const accordionHeaders = document.querySelectorAll('.accordion-header');
+            accordionHeaders.forEach(header => {
+                header.addEventListener('click', () => {
+                    const item = header.parentElement;
+                    const icon = header.querySelector('i');
+                    
+                    item.classList.toggle('active-faq');
+                    if (item.classList.contains('active-faq')) {
+                        icon.classList.remove('fa-plus');
+                        icon.classList.add('fa-minus');
+                    } else {
+                        icon.classList.remove('fa-minus');
+                        icon.classList.add('fa-plus');
+                    }
+                });
+            });
+        });
+    </script>
+
+    <!-- Extra Accordion CSS support -->
+    <style>
+        .accordion-item .accordion-body {
+            display: none;
+            padding: 0 25px 20px 25px;
+            color: #94a3b8;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        .accordion-item.active-faq .accordion-body {
+            display: block;
+        }
+    </style>
+</body>
+</html>

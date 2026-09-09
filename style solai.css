@@ -1,0 +1,567 @@
+/* Reset & Base Settings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+body {
+    background-color: #0b0d12;
+    color: #e2e8f0;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Floating Navbar */
+.navbar-wrapper {
+    position: fixed;
+    top: 20px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 1000;
+    padding: 0 20px;
+}
+
+.navbar {
+    background: rgba(15, 20, 28, 0.85);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 40px;
+    padding: 10px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1100px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+    text-decoration: none;
+}
+
+.logo-icon {
+    color: #ea580c;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: #ffffff;
+}
+
+.calc-btn {
+    background: #ea580c;
+    border: none;
+    color: #ffffff;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+/* Floating Side Buttons */
+.grid-icon-btn, .whatsapp-float {
+    position: fixed;
+    bottom: 25px;
+    z-index: 999;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    text-decoration: none;
+}
+
+.grid-icon-btn {
+    left: 25px;
+    background: #111622;
+    border: 1px solid #ea580c;
+    color: #ea580c;
+}
+
+.whatsapp-float {
+    right: 25px;
+    background: #25d366;
+    color: #ffffff;
+}
+
+/* Hero Section with Grid Lines Background */
+.hero-section {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 140px 20px 80px;
+    background-color: #080a0f;
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+}
+
+.hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.top-tag {
+    display: inline-block;
+    border: 1px solid #ea580c;
+    color: #ea580c;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 6px 16px;
+    border-radius: 20px;
+    text-decoration: none;
+    margin-bottom: 35px;
+}
+
+/* SOL AI Big Logo Styling */
+.sol-ai-logo-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    font-size: 5rem;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 2px;
+    line-height: 1;
+    margin-bottom: 25px;
+}
+
+.sol-ai-badge {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #ea580c 0%, #0b0d12 70%);
+    border: 2px solid #ea580c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 1.8rem;
+}
+
+.hero-main-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 40px;
+    letter-spacing: -0.5px;
+}
+
+/* Dark Outline Buttons */
+.btn-group {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.btn {
+    padding: 12px 28px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.btn-dark-outline {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+}
+
+.btn-dark-outline:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #ffffff;
+}
+
+.btn-sm {
+    padding: 8px 20px;
+    display: inline-block;
+    margin-top: 15px;
+}
+
+/* Dark Sections */
+.dark-section {
+    padding: 90px 20px;
+    background-color: #0b0d12;
+}
+
+.bg-darker {
+    background-color: #07080b;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.container-narrow {
+    max-width: 850px;
+}
+
+.grid-two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.sub-badge {
+    color: #ea580c;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.sub-badge .bar {
+    font-weight: 900;
+    margin-right: 4px;
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 20px;
+    letter-spacing: -0.5px;
+}
+
+.section-desc {
+    color: #94a3b8;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+}
+
+.bullet-list {
+    list-style: none;
+    margin-bottom: 25px;
+}
+
+.bullet-list li {
+    position: relative;
+    padding-left: 20px;
+    color: #cbd5e1;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.bullet-list li::before {
+    content: "•";
+    color: #ea580c;
+    position: absolute;
+    left: 0;
+    font-size: 1.2rem;
+    line-height: 1;
+}
+
+.robot-img, .cta-image {
+    width: 100%;
+    border-radius: 12px;
+    filter: grayscale(20%) brightness(90%);
+}
+
+/* Dashboard Mockup Card */
+.dashboard-preview-card {
+    background: #111622;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.dash-title {
+    color: #38bdf8;
+    font-weight: 700;
+    font-size: 0.9rem;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.dash-stats-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.dash-stat {
+    background: #0b0d12;
+    padding: 10px;
+    border-radius: 6px;
+    border-left: 3px solid #ea580c;
+}
+
+.dash-stat .lbl {
+    display: block;
+    font-size: 0.65rem;
+    color: #64748b;
+}
+
+.dash-stat .val {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.map-placeholder {
+    height: 180px;
+    background: #1e293b;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #64748b;
+    gap: 10px;
+}
+
+/* Stats Counter Bar */
+.stats-bar-section {
+    background: #080a0f;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 40px 20px;
+}
+
+.stats-flex {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.stat-box h2 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #ea580c;
+}
+
+.stat-box p {
+    font-size: 0.75rem;
+    color: #94a3b8;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* Text Content Styling */
+.main-heading-center {
+    font-size: 2rem;
+    color: #ffffff;
+    text-align: left;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+.paragraph-text {
+    color: #94a3b8;
+    font-size: 0.95rem;
+    margin-bottom: 25px;
+    line-height: 1.7;
+}
+
+.orange-link {
+    color: #ea580c;
+    text-decoration: none;
+}
+
+.orange-link:hover {
+    text-decoration: underline;
+}
+
+/* Laptop Mockup */
+.laptop-mockup {
+    position: relative;
+    width: 100%;
+}
+
+.laptop-screen img {
+    width: 100%;
+    border-radius: 8px 8px 0 0;
+    border: 4px solid #334155;
+}
+
+.laptop-base {
+    height: 12px;
+    background: #1e293b;
+    border-radius: 0 0 12px 12px;
+}
+
+/* Inverters Logos Section */
+.center-title {
+    text-align: center;
+    color: #ffffff;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    margin-bottom: 40px;
+}
+
+.inverter-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.inverter-card {
+    background: #111622;
+    padding: 30px 40px;
+    border-radius: 8px;
+    min-width: 200px;
+    text-align: center;
+}
+
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: #ffffff;
+}
+
+.logo-text.huawei {
+    letter-spacing: 3px;
+}
+
+.logo-text.inverex small {
+    display: block;
+    font-size: 0.5rem;
+    letter-spacing: 2px;
+    color: #ea580c;
+}
+
+.sub-caption-center {
+    text-align: center;
+    font-size: 0.75rem;
+    color: #64748b;
+    letter-spacing: 1px;
+}
+
+/* CTA Section */
+.cta-bg {
+    background-image: radial-gradient(circle at right, rgba(234, 88, 12, 0.1) 0%, transparent 60%);
+}
+
+.cta-title {
+    font-size: 1.8rem;
+    color: #ffffff;
+    font-weight: 800;
+}
+
+.cta-subtitle {
+    font-size: 2.2rem;
+    color: #ffffff;
+    font-weight: 900;
+    margin-bottom: 25px;
+}
+
+/* Site Footer */
+.site-footer {
+    background: #050608;
+    padding: 50px 20px 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    text-align: center;
+}
+
+.footer-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.footer-links a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 0.8rem;
+}
+
+.footer-socials {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.footer-socials a {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #111622;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.footer-copyright {
+    color: #475569;
+    font-size: 0.75rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .grid-two-col {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .sol-ai-logo-title {
+        font-size: 3.5rem;
+    }
+
+    .hero-main-title {
+        font-size: 1.8rem;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .stats-flex {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .inverter-grid {
+        flex-direction: column;
+        gap: 20px;
+    }
+}

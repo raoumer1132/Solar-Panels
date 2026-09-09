@@ -1,0 +1,487 @@
+/* Base Reset & Fonts */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #0b0f19;
+    color: #e5e7eb;
+    line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background-color: #111827;
+    border-bottom: 1px solid #1f2937;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo-container {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #ffffff;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+.logo-dot {
+    color: #ff6600;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: #9ca3af;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.nav-links a:hover {
+    color: #ffffff;
+}
+
+.calc-btn {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+/* Hero Section */
+.hero-section {
+    padding: 60px 5% 40px 5%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.cta-banner-top {
+    margin-bottom: 20px;
+}
+
+.size-btn {
+    background-color: #1f2937;
+    color: #ff6600;
+    border: 1px solid #374151;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.category-tag {
+    color: #ff6600;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.hero-section h1 {
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin: 15px 0 20px 0;
+    line-height: 1.2;
+}
+
+.hero-subtitle-desc {
+    font-size: 1.05rem;
+    color: #9ca3af;
+    margin-bottom: 15px;
+}
+
+.meta-update-note {
+    font-size: 0.8rem;
+    color: #6b7280;
+    font-style: italic;
+}
+
+/* Main Container */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 5% 60px 5%;
+}
+
+section {
+    margin-bottom: 45px;
+}
+
+section h2 {
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #1f2937;
+    padding-bottom: 8px;
+}
+
+section p {
+    margin-bottom: 15px;
+    color: #d1d5db;
+}
+
+section h3 {
+    font-size: 1.1rem;
+    color: #ffffff;
+    margin: 20px 0 8px 0;
+}
+
+/* Bullet Lists */
+.bullet-list {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.bullet-list li {
+    margin-bottom: 10px;
+    color: #d1d5db;
+}
+
+.bullet-list a {
+    color: #ff6600;
+    text-decoration: none;
+}
+
+.bullet-list a:hover {
+    text-decoration: underline;
+}
+
+/* City Compare Box */
+.city-compare-box {
+    background-color: #111827;
+    border: 1px solid #1f2937;
+    padding: 25px;
+    border-radius: 8px;
+    margin: 30px 0;
+}
+
+.compare-tag {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #ff6600;
+    letter-spacing: 1px;
+}
+
+.city-pill-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.city-pill {
+    background-color: #1f2937;
+    color: #ffffff;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    text-decoration: none;
+    border: 1px solid #374151;
+    transition: background 0.2s;
+}
+
+.city-pill:hover {
+    background-color: #374151;
+}
+
+/* Ranking Cards */
+.ranking-card {
+    background-color: #111827;
+    border: 1px solid #1f2937;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.top-pick-card {
+    border-color: #ff6600;
+}
+
+.rank-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.rank-number {
+    background-color: #1f2937;
+    color: #ffffff;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.top-pick-card .rank-number {
+    background-color: #ff6600;
+}
+
+.rank-header h3 {
+    margin: 0;
+    color: #ffffff;
+    font-size: 1.2rem;
+}
+
+.badges {
+    margin-left: auto;
+    display: flex;
+    gap: 8px;
+}
+
+.badge-rating {
+    background-color: rgba(234, 179, 8, 0.1);
+    color: #eab308;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.badge-top {
+    background-color: #ff6600;
+    color: #ffffff;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+/* Data Tables */
+.table-responsive {
+    overflow-x: auto;
+    margin: 20px 0;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #111827;
+    border-radius: 8px;
+    overflow: hidden;
+    font-size: 0.9rem;
+}
+
+.data-table th, .data-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #1f2937;
+}
+
+.data-table th {
+    background-color: #1f2937;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.data-table td {
+    color: #d1d5db;
+}
+
+/* Quote CTA Buttons */
+.quote-cta-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.btn-whatsapp, .btn-call, .btn-survey {
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-decoration: none;
+    text-align: center;
+}
+
+.btn-whatsapp {
+    background-color: #25d366;
+    color: #ffffff;
+}
+
+.btn-call {
+    background-color: #1f2937;
+    color: #ffffff;
+    border: 1px solid #374151;
+}
+
+.btn-survey {
+    background-color: #ff6600;
+    color: #ffffff;
+}
+
+/* FAQ Accordion */
+.faq-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.faq-item {
+    background-color: #111827;
+    border: 1px solid #1f2937;
+    padding: 15px 20px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.faq-item h3 {
+    margin: 0;
+    font-size: 1rem;
+    color: #ffffff;
+}
+
+.faq-plus {
+    color: #ff6600;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Orange Promo Box */
+.orange-promo-box {
+    background-color: #ff6600;
+    color: #ffffff;
+    padding: 40px 30px;
+    border-radius: 12px;
+    text-align: center;
+    margin: 40px 0;
+}
+
+.promo-meta {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    opacity: 0.9;
+}
+
+.orange-promo-box h3 {
+    font-size: 1.8rem;
+    margin: 15px 0;
+    color: #ffffff;
+}
+
+.orange-promo-box p {
+    font-size: 1rem;
+    max-width: 650px;
+    margin: 0 auto 25px auto;
+    color: #ffffff;
+    opacity: 0.95;
+}
+
+.btn-white-wa {
+    background-color: #ffffff;
+    color: #ff6600;
+    padding: 14px 28px;
+    font-weight: 700;
+    border-radius: 6px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.promo-footer-note {
+    display: block;
+    font-size: 0.8rem;
+    margin-top: 15px;
+    opacity: 0.85;
+}
+
+/* Footer */
+.site-footer {
+    background-color: #07090f;
+    padding: 40px 5%;
+    text-align: center;
+    border-top: 1px solid #1f2937;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.footer-links a {
+    color: #9ca3af;
+    text-decoration: none;
+    font-size: 0.85rem;
+}
+
+.footer-links a:hover {
+    color: #ffffff;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.social-circle {
+    width: 35px;
+    height: 35px;
+    background-color: #1f2937;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.copyright {
+    color: #6b7280;
+    font-size: 0.8rem;
+}
+
+/* Floating Icons */
+.floating-icon-left, .floating-icon-right {
+    position: fixed;
+    bottom: 20px;
+    width: 45px;
+    height: 45px;
+    background-color: #1f2937;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 999;
+    text-decoration: none;
+}
+
+.floating-icon-left {
+    left: 20px;
+}
+
+.floating-icon-right {
+    right: 20px;
+    background-color: #25d366;
+}
