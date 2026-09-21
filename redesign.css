@@ -1,0 +1,148 @@
+/* =========================================================================
+   SOLAR CITIZEN — REDESIGN OVERLAY
+   Load this AFTER your page's existing stylesheet. It only upgrades
+   hero sections, cards, buttons and stat blocks — it does not touch
+   layout, navigation, or content. Safe to add to every page.
+   ========================================================================= */
+
+/* ---------- shared building blocks ---------- */
+@keyframes sc-float { 0%,100%{transform:translateY(0) scale(1);} 50%{transform:translateY(-22px) scale(1.05);} }
+
+/* =========================================================================
+   FAMILY A — main dark pages (sol__style.css / style_solai.css)
+   solutions.html, sol-ai.html
+   ========================================================================= */
+.hero-section{ position:relative; overflow:hidden; }
+.hero-section::before{
+  content:''; position:absolute; inset:0; pointer-events:none; z-index:0;
+  background:
+    radial-gradient(ellipse 60% 50% at 50% 0%, rgba(234,88,12,.16), transparent 62%),
+    radial-gradient(ellipse 35% 35% at 88% 25%, rgba(56,189,248,.08), transparent 60%);
+}
+.hero-section .hero-content, .hero-section .hero-overlay ~ .hero-content{ position:relative; z-index:2; }
+.top-tag{
+  transition:all .25s ease; backdrop-filter:blur(6px);
+}
+.top-tag:hover{ background:rgba(234,88,12,.14); transform:translateY(-1px); }
+
+.hero-title, .hero-main-title{
+  background:linear-gradient(180deg,#ffffff 35%,#c9ccd3 100%);
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+}
+
+.stats-grid, .stats-flex{
+  background:rgba(255,255,255,.02);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:16px;
+  padding:10px 20px;
+  backdrop-filter:blur(6px);
+}
+.stat-item, .stat-box{ transition:transform .25s ease; border-radius:10px; }
+.stat-item:hover, .stat-box:hover{ transform:translateY(-3px); background:rgba(234,88,12,.06); }
+
+.card, .service-card, .stage-card, .feature-card, .guide-card, .reg-card, .inverter-card{
+  transition:transform .3s ease, border-color .3s ease, box-shadow .3s ease;
+  position:relative;
+}
+.card:hover, .service-card:hover, .stage-card:hover, .feature-card:hover, .guide-card:hover, .reg-card:hover, .inverter-card:hover{
+  transform:translateY(-6px);
+  border-color:rgba(234,88,12,.4) !important;
+  box-shadow:0 18px 40px rgba(0,0,0,.35);
+}
+.icon-box{ transition:transform .3s ease; }
+.service-card:hover .icon-box{ transform:scale(1.1) rotate(-4deg); }
+
+.dashboard-preview-card{ transition:box-shadow .3s ease; }
+.dashboard-preview-card:hover{ box-shadow:0 20px 45px rgba(0,0,0,.4); }
+
+.btn-orange, .btn-dark-outline, .btn-primary{
+  transition:transform .25s ease, box-shadow .25s ease;
+}
+.btn-orange:hover, .btn-primary:hover{ transform:translateY(-2px); box-shadow:0 10px 26px rgba(234,88,12,.4); }
+.btn-dark-outline:hover, .btn-outline:hover{ transform:translateY(-2px); }
+
+/* =========================================================================
+   FAMILY B — projects.html (style_projects.css, light theme)
+   ========================================================================= */
+.hero-badge{ transition:all .25s ease; }
+.feature-card, .case-card{
+  transition:transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+}
+.feature-card:hover, .case-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 16px 34px rgba(234,88,12,.12);
+  border-color:#ea580c;
+}
+.project-card{ transition:transform .35s ease, box-shadow .35s ease; }
+.project-card:hover{ transform:translateY(-8px) scale(1.01); box-shadow:0 22px 45px rgba(0,0,0,.22); }
+.client-logo{ transition:all .3s ease; }
+
+/* =========================================================================
+   FAMILY C — city-guide pages that use CSS custom properties
+   (pindi.css, mul.css, isl.css, karachi.css, lahore.css, fsd.css)
+   These adapt automatically to each page's own --accent-orange value.
+   ========================================================================= */
+h1{
+  background:linear-gradient(180deg,#ffffff 40%, var(--text-muted,#9ba1b0) 140%);
+  -webkit-background-clip:text; background-clip:text;
+}
+.tag{ letter-spacing:2px; }
+.company-card, .compare-box, .stage-card{
+  transition:transform .3s ease, border-color .3s ease, box-shadow .3s ease;
+}
+.company-card:hover, .compare-box:hover{
+  transform:translateY(-4px);
+  border-color:var(--accent-orange,#f26822) !important;
+  box-shadow:0 16px 36px rgba(0,0,0,.35);
+}
+.company-card.top-pick-card{
+  box-shadow:0 0 0 1px var(--accent-orange,#f26822), 0 16px 40px rgba(242,104,34,.12);
+}
+.pill-badge{ transition:all .25s ease; }
+.rank-number{ box-shadow:0 6px 16px rgba(242,104,34,.35); }
+.system-size-btn:hover{ box-shadow:0 8px 20px rgba(242,104,34,.3); }
+
+/* =========================================================================
+   FAMILY D — pages without CSS variables (pse.css, best.css)
+   Peshawar (psw.html), Top Companies (best.html) — accent is #ff6600
+   ========================================================================= */
+.quote-box, .company-card{
+  transition:transform .3s ease, box-shadow .3s ease;
+}
+.quote-box:hover{ box-shadow:0 16px 36px rgba(255,102,0,.1); }
+.faq-item .faq-question:hover{ color:#ff6600; }
+
+/* =========================================================================
+   FAMILY E — homepage (style.css), calculator (cal.css), contact (contact.css)
+   index.html, cal.html, contact.html
+   ========================================================================= */
+.stat-card, .city-card, .feature-card, .reach-card, .office-card, .process-card,
+.calc-box, .system-card, .accordion-item, .ranking-card, .city-compare-box{
+  transition:transform .3s ease, border-color .3s ease, box-shadow .3s ease;
+}
+.stat-card:hover, .feature-card:hover, .reach-card:hover, .office-card:hover, .process-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 16px 34px rgba(234,88,12,.14);
+}
+.city-card{ transition:all .25s ease; }
+.city-card:hover{ transform:translateY(-3px); box-shadow:0 10px 24px rgba(234,88,12,.2); }
+.system-card:hover{ transform:translateY(-2px); }
+.accordion-item:hover{ border-color:rgba(234,88,12,.35); }
+.ranking-card:hover{ transform:translateY(-4px); border-color:#ff6600 !important; box-shadow:0 16px 34px rgba(0,0,0,.35); }
+.city-compare-box:hover{ box-shadow:0 14px 30px rgba(255,102,0,.1); }
+.orange-promo-box, .orange-cta-banner, .orange-cta-banner-2{
+  position:relative; overflow:hidden;
+}
+.orange-promo-box::after, .orange-cta-banner::after, .orange-cta-banner-2::after{
+  content:''; position:absolute; inset:0; pointer-events:none;
+  background:radial-gradient(ellipse 60% 80% at 20% 0%, rgba(255,255,255,.18), transparent 60%);
+}
+.company-card, .ranking-card{ position:relative; }
+.category-tag, .badge-orange, .compare-tag{ letter-spacing:1.8px; }
+
+/* =========================================================================
+   Universal small polish — applies harmlessly everywhere
+   ========================================================================= */
+img{ transition:filter .3s ease; }
+a{ -webkit-tap-highlight-color:transparent; }
+::selection{ background:rgba(234,88,12,.35); color:#fff; }
